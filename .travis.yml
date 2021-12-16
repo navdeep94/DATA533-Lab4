@@ -1,0 +1,13 @@
+language: python
+python:
+  - "3.4"
+  - "3.5"
+  - "3.8"
+# command to run tests
+script:
+  - python TestApartmentType.py
+  - python TestCondition.py
+  - python TestLocation.py
+  - python test_areatype.py
+  - python test_attributes.py
+  - python test_highlights.py

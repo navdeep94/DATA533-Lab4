@@ -1,5 +1,14 @@
 from realestate.apartment import Feature
 
+class Error(Exception):
+    pass
+
+class NoException(Error):
+    pass
+
+class CustomErrorException(Error):
+    pass
+
 class Location(Feature.Features):
     cities = {
         'USA': ['Chicago','Seattle','New York','Boston'], 
@@ -35,3 +44,34 @@ class Location(Feature.Features):
         print("Cities Available for {} property are : {}".format(self.apartmentInfo, self.apartment_cities()))
         print("Localities Available for {} property are : {}".format(self.apartmentInfo, self.apartment_locality()))
         print("Directions Available for {} property are : {}".format(self.apartmentInfo, self.apartment_facing_direction()))
+        
+try:
+    c = Location("CANADA")
+    if c.apartment_cities() == ['Vancouver','Kelowna','Montreal','Toronto']:
+        raise NoException
+    else:
+        raise CustomErrorException
+        
+except NoException:
+    print("No Exception is there in the code")
+
+except CustomErrorException:
+    print("Custom Exception in the code")
+
+except ZeroDivisionError:
+    print("Zero Division Error")
+
+except IndexError:
+    print("Index Error")
+    
+except NameError:
+    print("Name Error")
+    
+except IndentationError:
+    print("Indentation Error")
+    
+else:
+    print("Some other unknown error")
+    
+finally:
+    print("Code is finally executed")

@@ -1,3 +1,12 @@
+class Error(Exception):
+    pass
+
+class NoException(Error):
+    pass
+
+class CustomErrorException(Error):
+    pass
+
 class Features:
     price = {
         '1BHK': '150000 - 200000 CAD', 
@@ -45,3 +54,34 @@ class ApartmentType(Features):
     def apartment_display(self):
         Features.apartment_display(self)
         print("Floors Available for {} are : {}".format(self.apartmentInfo, self.apartment_floors()))
+        
+try:
+    c = ApartmentType("1BHK")
+    if c.apartment_floors() == [2, 3, 7, 11, 13]:
+        raise NoException
+    else:
+        raise CustomErrorException
+        
+except NoException:
+    print("No Exception is there in the code")
+
+except CustomErrorException:
+    print("Custom Exception in the code")
+
+except ZeroDivisionError:
+    print("Zero Division Error")
+
+except IndexError:
+    print("Index Error")
+    
+except NameError:
+    print("Name Error")
+    
+except IndentationError:
+    print("Indentation Error")
+    
+else:
+    print("Some other unknown error")
+    
+finally:
+    print("Code is finally executed")

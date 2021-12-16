@@ -1,5 +1,14 @@
 from realestate.apartment import Feature
 
+class Error(Exception):
+    pass
+
+class NoException(Error):
+    pass
+
+class CustomErrorException(Error):
+    pass
+
 class Condition(Feature.Features):
     maintenance = {
         '0-3': 'Not Required', 
@@ -33,3 +42,34 @@ class Condition(Feature.Features):
         print("Maintenance Status for {} property is : {}".format(self.apartmentInfo, self.apartment_maintenance()))
         print("Discounts Available for {} property are : {}".format(self.apartmentInfo, self.apartment_discount()))
         print("Furnishing Status for {} property are : {}".format(self.apartmentInfo, self.apartment_furnishing_status()))
+        
+try:
+    c = Condition("0-3")
+    if c.apartment_maintenance() == "Not Required":
+        raise NoException
+    else:
+        raise CustomErrorException
+        
+except NoException:
+    print("No Exception is there in the code")
+
+except CustomErrorException:
+    print("Custom Exception in the code")
+
+except ZeroDivisionError:
+    print("Zero Division Error")
+
+except IndexError:
+    print("Index Error")
+    
+except NameError:
+    print("Name Error")
+    
+except IndentationError:
+    print("Indentation Error")
+    
+else:
+    print("Some other unknown error")
+    
+finally:
+    print("Code is finally executed")
