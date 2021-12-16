@@ -6,3 +6,5 @@ python:
 # command to run tests
 script:
   - python TestApartmentType.py
+  - python TestLocation.py
+  - python TestCondition.py
