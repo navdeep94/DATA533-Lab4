@@ -1,6 +1,6 @@
 # DATA533-Lab4   
 ---
-### Team Members:   
+## Team Members:   
 Mehul Bhargava   
 Navdeep Singh Saini    
 Andrew Nguyen   
