@@ -12,6 +12,13 @@
 #     name: python3
 # ---
 
+class Error(Exception):
+    pass
+class NoException(Error):
+    pass
+class CustomErrorException(Error):
+    pass
+
 from realestate.familyhome import attributes
 class Highlights(attributes.Characteristics):  
     garage1 = {"1": 'No Garage available', "2": 'Garage with one car capacity', "3 or more": 'Garage with two cars capacity'}
@@ -49,4 +56,25 @@ obj = Highlights('1', 'low', '1')
 
 obj.Characteristics_display()
 
-
+try:
+    c = Highlights('1', 'low', '1')
+    if c.garage_capacity() == "No Garage available":
+        raise NoException
+    else:
+        raise CustomErrorException
+except NoException:
+    print("No Exception is there in the code")
+except CustomErrorException:
+    print("Custom Exception in the code")
+except ZeroDivisionError:
+    print("Zero Division Error")
+except IndexError:
+    print("Index Error")
+except NameError:
+    print("Name Error")
+except IndentationError:
+    print("Indentation Error")
+else:
+    print("Some other unknown error")
+finally:
+    print("Code is finally executed")

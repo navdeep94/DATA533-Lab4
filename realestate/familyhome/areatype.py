@@ -11,8 +11,17 @@
 #     language: python
 #     name: python3
 # ---
+class Error(Exception):
+    pass
+class NoException(Error):
+    pass
+class CustomErrorException(Error):
+    pass
 
-from realestate.familyhome import attributes
+
+
+
+from realestate.familyhome attributes
 class AreaType(attributes.Characteristics):  
     amen1 = {"1": 'Hospital, Park, Shopping Center, School, and a Mall', "2": 'Hospital, Park, Shopping Center, and a School', "3 or more": 'Hospital, Park, Shopping Center, School, Mall, Library, Beach, and a Cafe'}
     amen2 = {"1": 'Normal view, park facing, or sea facing', "2": 'Normal View or Park facing', "3 or more": 'Normal view, park facing, sea facing, or sun facing'}
@@ -32,7 +41,7 @@ class AreaType(attributes.Characteristics):
         attributes.Characteristics.__init__(self, fm, b, f)
         
     
-    def nearby_amenities(self):
+    def nearby_amenities(self): 
         return AreaType.amen1[self.fm]
         
     def view(self):
@@ -52,3 +61,25 @@ obj = AreaType('1', 'low', '1')
 obj.Characteristics_display()
 
 
+try:
+    c = AreaType('1', 'low', '1')
+    if c.nearby_amenities() == "Hospital, Park, Shopping Center, School, and a Mall":
+        raise NoException
+    else:
+        raise CustomErrorException
+except NoException:
+    print("No Exception is there in the code")
+except CustomErrorException:
+    print("Custom Exception in the code")
+except ZeroDivisionError:
+    print("Zero Division Error")
+except IndexError:
+    print("Index Error")
+except NameError:
+    print("Name Error")
+except IndentationError:
+    print("Indentation Error")
+else:
+    print("Some other unknown error")
+finally:
+    print("Code is finally executed")
