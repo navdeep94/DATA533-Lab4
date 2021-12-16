@@ -8,6 +8,3 @@ script:
   - python TestApartmentType.py
   - python TestLocation.py
   - python TestCondition.py
-  - python test_areatype.py
-  - python test_attributes.py
-  - python test_highlights.py
