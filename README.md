@@ -12,6 +12,4 @@ Andrew Nguyen
 
 [![Build Status](https://app.travis-ci.com/navdeep94/DATA533-Lab4.svg?branch=main)](https://app.travis-ci.com/navdeep94/DATA533-Lab4)
 
-Video Recording Link:
-
-https://youtu.be/GyTlLxad8RI
+Video Recording Link is https://youtu.be/GyTlLxad8RI
