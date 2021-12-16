@@ -1,3 +1,4 @@
+# Feature module
 class Error(Exception):
     pass
 

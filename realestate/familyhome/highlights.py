@@ -1,4 +1,4 @@
-# ---
+# --
 # jupyter:
 #   jupytext:
 #     text_representation:
@@ -10,7 +10,7 @@
 #     display_name: Python 3 (ipykernel)
 #     language: python
 #     name: python3
-# ---
+# --
 
 class Error(Exception):
     pass

@@ -1,3 +1,4 @@
+#Location module
 from realestate.apartment import Feature
 
 class Error(Exception):
