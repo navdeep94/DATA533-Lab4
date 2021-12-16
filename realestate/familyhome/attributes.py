@@ -13,7 +13,12 @@
 # ---
 
 # +
-
+class Error(Exception):
+    pass
+class NoException(Error):
+    pass
+class CustomErrorException(Error):
+    pass
 
 class Characteristics:  
     family_members1 = {"1": '500000-600000', "2": '600000-700000', "3 or more": '700000-800000'}
@@ -65,3 +70,25 @@ obj = Quality('1', 'low', '1')
 obj.Characteristics_display()
 
 
+try:
+    c = Characteristics('1', 'low', '1')
+    if c.house_price() == "500000-600000":
+        raise NoException
+    else:
+        raise CustomErrorException
+except NoException:
+    print("No Exception is there in the code")
+except CustomErrorException:
+    print("Custom Exception in the code")
+except ZeroDivisionError:
+    print("Zero Division Error")
+except IndexError:
+    print("Index Error")
+except NameError:
+    print("Name Error")
+except IndentationError:
+    print("Indentation Error")
+else:
+    print("Some other unknown error")
+finally:
+    print("Code is finally executed")
