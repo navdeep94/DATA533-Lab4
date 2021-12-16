@@ -11,3 +11,7 @@ Andrew Nguyen
 + The rest of the files are similar to the previous labs. 
 
 [![Build Status](https://app.travis-ci.com/navdeep94/DATA533-Lab4.svg?branch=main)](https://app.travis-ci.com/navdeep94/DATA533-Lab4)
+
+Video Recording Link:
+
+https://youtu.be/GyTlLxad8RI
